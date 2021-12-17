@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   itemBuilder: (context, index) {
                     return ListTile(
                         title: Text(data['superheros'][index]['name']),
+                        subtitle: Text(data['superheros'][index]['power']),
                         leading: Image.network(
                             data['superheros'][index]
                                 ["url"], // this image doesn't exist
