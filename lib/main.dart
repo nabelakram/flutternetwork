@@ -71,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     return Card(
                       child: ListTile(
                           title: Text(data['superheros'][index]['name']),
-                          subtitle: Text(data['superheros'][index]['power']),
+                          subtitle: Text(
+                              'Gender : ${data['superheros'][index]['power']}'),
                           leading: Image.network(
                               data['superheros'][index]
                                   ["url"], // this image doesn't exist
