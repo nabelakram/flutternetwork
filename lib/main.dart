@@ -68,23 +68,26 @@ class _MyHomePageState extends State<MyHomePage> {
           child: data != null
               ? ListView.builder(
                   itemBuilder: (context, index) {
-                    return ListTile(
-                        title: Text(data['superheros'][index]['name']),
-                        subtitle: Text(data['superheros'][index]['power']),
-                        leading: Image.network(
-                            data['superheros'][index]
-                                ["url"], // this image doesn't exist
-                            fit: BoxFit.cover,
-                            errorBuilder: (context, error, stackTrace) {
-                          return Container(
-                            color: Colors.amber,
-                            alignment: Alignment.center,
-                            child: const Text(
-                              'NO IMAGE!',
-                              style: TextStyle(fontSize: 10),
-                            ),
-                          );
-                        }));
+                    return Card(
+                      child: ListTile(
+                          title: Text(data['superheros'][index]['name']),
+                          subtitle: Text(
+                              'Gender : ${data['superheros'][index]['power']}'),
+                          leading: Image.network(
+                              data['superheros'][index]
+                                  ["url"], // this image doesn't exist
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) {
+                            return Container(
+                              color: Colors.amber,
+                              alignment: Alignment.center,
+                              child: const Text(
+                                'NO IMAGE!',
+                                style: TextStyle(fontSize: 10),
+                              ),
+                            );
+                          })),
+                    );
                   },
                   itemCount: data['superheros'].length,
                 )
